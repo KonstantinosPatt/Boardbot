@@ -1,5 +1,4 @@
 version: "2.0"
-
 nlu:
 - intent: greet
   examples: |
@@ -16,7 +15,6 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
-
 - intent: goodbye
   examples: |
     - good afternoon
@@ -30,7 +28,6 @@ nlu:
     - see you around
     - bye bye
     - see you later
-
 - intent: affirm
   examples: |
     - yes
@@ -39,7 +36,6 @@ nlu:
     - of course
     - that sounds good
     - correct
-
 - intent: deny
   examples: |
     - no
@@ -49,7 +45,6 @@ nlu:
     - don't like that
     - no way
     - not really
-
 - intent: mood_great
   examples: |
     - perfect
@@ -66,14 +61,12 @@ nlu:
     - so so perfect
     - so good
     - so perfect
-
 - intent: mood_unhappy
   examples: |
     - my day was horrible
     - I am sad
     - I don't feel very well
     - I am disappointed
-    - super sad
     - I'm so sad
     - sad
     - very sad
@@ -83,10 +76,40 @@ nlu:
     - extremly sad
     - so saad
     - so sad
-
-- intent: bot_challenge
+- intent: ask_type
   examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
+    - I'm looking for a [strategy](type) game
+    - I'm looking for a [family](type) game
+    - I'm looking for a [thematic](type) game
+    - I'm looking for a [customizable](type) game
+    - I'm looking for an [abstract](type) game
+    - I'm looking for a [party](type) game
+- intent: ask_category
+  examples: |
+    - I'm looking for an [Economic](category) game
+    - I'm looking for a [Fantasy](category) game
+    - I'm looking for an [Adventure](category) game
+    - I'm looking for a [card game](category)
+    - I'm looking for an [Exploration](category) game
+    - I'm looking for a [Medieval](category) game
+    - I'm looking for a [City Building](category) game
+    - I'm looking for a [Civilization](category) game
+    - I'm looking for an [Industry](category) game
+    - I'm looking for a [Fighting](category) game
+    - I;m looking for an [Animals](category) game
+    - I'm looking for an [Ancient](category) game
+    - I'm looking for a [Miniatures](category) game
+    - I'm looking for an [Environmental](category) game
+    - I'm looking for a [Farming](category) game
+    - I'm looking for a[ Science Fiction](category) game
+    - I'm looking for a [Dice](category) game
+    - I'm looking for a [Renaissance](category) game
+    - I'm looking for a [Political](category) game
+    - I'm looking for a [Bluffing](category) game
+    - I'm looking for a[ Collectible Components](category) game
+    - I'm looking for a [Puzzle](category) game
+    - I'm looking for a [Space Exploration](category) game
+    - I'm looking for a [Movies](category) game
+    - I'm looking for an[ Abstract Strategy](category) game
+    - I'm looking for a [Spies](category) game
+    - I'm looking for an Abstract Strategies game
