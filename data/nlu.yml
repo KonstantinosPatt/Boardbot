@@ -15,6 +15,8 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
+    - hi!
+    - hi there
 - intent: goodbye
   examples: |
     - good afternoon
@@ -36,6 +38,10 @@ nlu:
     - of course
     - that sounds good
     - correct
+    - yes !
+    - great!
+    - good idea!
+    - yes!
 - intent: deny
   examples: |
     - no
@@ -76,7 +82,7 @@ nlu:
     - extremly sad
     - so saad
     - so sad
-- intent: ask_type
+- intent: prefer_type
   examples: |
     - I'm looking for a [strategy](type) game
     - I'm looking for a [family](type) game
@@ -84,7 +90,16 @@ nlu:
     - I'm looking for a [customizable](type) game
     - I'm looking for an [abstract](type) game
     - I'm looking for a [party](type) game
-- intent: ask_category
+    - i'm looking for a [Family](type) game
+    - [abstract](type)
+    - i want to play an [abstract](type) game
+    - i want to play an [Abstract](category) game
+    - [family](type) game
+    - i want to play a [strategy](type) game
+    - i want to play a [Strategy](type) game
+    - i want to  play a [strategy](type) game
+    - [strategy](type)
+- intent: prefer_category
   examples: |
     - I'm looking for an [Economic](category) game
     - I'm looking for a [Fantasy](category) game
@@ -110,6 +125,46 @@ nlu:
     - I'm looking for a [Puzzle](category) game
     - I'm looking for a [Space Exploration](category) game
     - I'm looking for a [Movies](category) game
-    - I'm looking for an[ Abstract Strategy](category) game
+    - I'm looking for an [Abstract Strategy](category) game
     - I'm looking for a [Spies](category) game
+    - i want to play a [miniatures](category) game
+    - Yes id like an [Adventure](category) game
+    - i'd like a [card](category) game
+    - I'd like an Abstract Strategies game
     - I'm looking for an Abstract Strategies game
+    - yes i want a [bluffing](category) game
+    - i want a [dice](category) game
+    - i'd like a [dice](category) game
+    - yes a [dice](category) game
+    - yes id like a [dice](category) game
+    - yes i'd like a [dice](category) game
+    - yes i want a [dice](category) game
+    - i want a [puzzle](category) game
+    - i want to play a [dice](category) game
+- intent: prefer_num_players
+  examples: |
+    - [4 players](num_players)
+    - [5 players](num_players)
+    - [2 players](num_players)
+    - [1 player](num_players)
+    - [3 players](num_players)
+    - [6 players](num_players)
+    - [7 players](num_players)
+    - [8 players](num_players)
+    - [1](num_players)
+    - [2](num_players)
+    - [3](num_players)
+    - [4](num_players)
+    - [5](num_players)
+    - [6](num_players)
+    - [7](num_players)
+    - [8](num_players)
+- intent: prefer_time
+  examples: |
+    - [90 minutes](time)
+    - [70 minutes](time)
+    - [one hour](time)
+    - [half an hour](time)
+    - [40 minutes](time)
+    - [30 minutes](time)
+    - [20 minutes](time)

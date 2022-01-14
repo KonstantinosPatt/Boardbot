@@ -1,38 +1,124 @@
 version: "2.0"
 stories:
-- story: happy path
+- story: Story from Conversation ID ff9eab0cd1fa4268982603ba2b42a3ae
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
-- story: sad path 1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
-- story: sad path 2
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
-- story: Story from Conversation ID 3051c4fd9dbb47a495f5153777176ad1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: greet
-  - action: utter_greet
-  - intent: ask_type
+  - intent: prefer_type
     entities:
-    - type: Family
+    - category: Abstract
+  - action: utter_ask_type
+- story: Story from Conversation ID 7e6225ab48c448e390d001a1939e945c
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: prefer_type
+    entities:
+    - type: abstract
   - action: utter_ask_category
-  - intent: ask_category
-  - action: utter_happy
+  - intent: prefer_category
+    entities:
+    - category: Adventure
+- story: Custom story 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: prefer_type
+  - action: utter_ask_category
+  - intent: prefer_category
+  - action: utter_ask_time
+  - intent: prefer_time
+  - action: utter_ask_num_players
+  - intent: prefer_num_players
+  - action: utter_suggest_game
+  - intent: agree
+  - action: utter_goodbye
+- story: Custom story 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: prefer_category
+  - action: utter_ask_type
+  - intent: prefer_type
+  - action: utter_ask_time
+  - intent: prefer_time
+  - action: utter_ask_num_players
+  - intent: prefer_num_players
+  - action: utter_suggest_game
+  - intent: agree
+  - action: utter_goodbye
+- story: Story from Conversation ID a7ef34ee71ac4ba3a66ec79e9674960b
+  steps:
+  - intent: greet
+  - action: utter_greet
+- story: Story from Conversation ID 8ea240573664448899b9e9442029a843
+  steps:
+  - intent: greet
+  - action: utter_greet
+- story: Story from Conversation ID b0ff4a2647214fef89635f32da75999c
+  steps:
+  - intent: greet
+  - action: utter_greet
+- story: Story from Conversation ID 9b62b0f645d644da8f748d691ab2bd89
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: prefer_type
+    entities:
+    - type: strategy
+  - action: utter_ask_category
+  - intent: prefer_category
+    entities:
+    - category: dice
+  - action: utter_ask_num_players
+- story: Story from Conversation ID 245a561fdc944405b680eb2a68ab3613
+  steps:
+  - action: utter_ask_num_players
+  - intent: mood_great
+    entities:
+    - num_players: 4 players
+  - action: utter_ask_time
+- story: Story from Conversation ID bf214c4eb0a24b4fae910c1c2256d0c3
+  steps:
+  - intent: prefer_num_players
+    entities:
+    - num_players: 4 players
+  - action: utter_suggest_game
+  - intent: affirm
+  - action: utter_goodbye
+- story: Story from Conversation ID e28980849ee34a3ca5bc63ae53590792
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: prefer_type
+    entities:
+    - type: strategy
+  - action: utter_ask_category
+  - intent: prefer_category
+    entities:
+    - category: dice
+  - action: utter_ask_num_players
+  - intent: prefer_num_players
+    entities:
+    - num_players: 4 players
+  - action: utter_suggest_game
+  - intent: affirm
+  - action: utter_goodbye
+- story: Story from Conversation ID c41d6f02bc3341bcbc877756e7d9f6aa
+  steps:
+  - action: utter_ask_num_players
+  - intent: prefer_num_players
+    entities:
+    - num_players: 2 players
+  - action: utter_ask_time
+  - intent: prefer_time
+    entities:
+    - num_players: '70'
+  - action: utter_suggest_game
+  - intent: mood_great
+  - action: utter_goodbye
+- story: Story from Conversation ID b1062489e2974944b4d61d167c346ccd
+  steps:
+  - action: utter_suggest_game
+  - intent: mood_great
+  - action: utter_goodbye
