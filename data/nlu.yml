@@ -15,6 +15,7 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
+    - hi!
 - intent: goodbye
   examples: |
     - good afternoon
@@ -76,7 +77,7 @@ nlu:
     - extremly sad
     - so saad
     - so sad
-- intent: ask_type
+- intent: prefer_type
   examples: |
     - I'm looking for a [strategy](type) game
     - I'm looking for a [family](type) game
@@ -84,7 +85,15 @@ nlu:
     - I'm looking for a [customizable](type) game
     - I'm looking for an [abstract](type) game
     - I'm looking for a [party](type) game
-- intent: ask_category
+    - i'm looking for a [Family](type) game
+    - [abstract](type)
+    - i want to play an [abstract](type) game
+    - i want to play an [Abstract](category) game
+    - [family](type) game
+    - i want to play a [strategy](type) game
+    - i want to play a [Strategy](type) game
+    - i want to  play a [strategy](type) game
+- intent: prefer_category
   examples: |
     - I'm looking for an [Economic](category) game
     - I'm looking for a [Fantasy](category) game
@@ -110,6 +119,23 @@ nlu:
     - I'm looking for a [Puzzle](category) game
     - I'm looking for a [Space Exploration](category) game
     - I'm looking for a [Movies](category) game
-    - I'm looking for an[ Abstract Strategy](category) game
+    - I'm looking for an [Abstract Strategy](category) game
     - I'm looking for a [Spies](category) game
+    - i want to play a [miniatures](category) game
+    - Yes id like an [Adventure](category) game
+    - i'd like a [card](category) game
+    - I'd like an Abstract Strategies game
     - I'm looking for an Abstract Strategies game
+    - yes i want a [bluffing](category) game
+    - i want a [dice](category) game
+    - i'd like a [dice](category) game
+    - yes a [dice](category) game
+    - yes id like a [dice](category) game
+    - yes i'd like a [dice](category) game
+    - yes i want a [dice](category) game
+- intent: prefer_num_players
+  examples: |
+    - [4 players](num_players)
+- intent: prefer_time
+  examples: |
+    - [90](num_players) minutes
