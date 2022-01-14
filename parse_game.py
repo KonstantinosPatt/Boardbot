@@ -15,6 +15,8 @@ def parse_game(url):
     string = page.text
     title = re.findall(r'<title>(.*?) \| Board Game \| BoardGameGeek</title>', string)[0]
     # print(title)
+    gametype = re.findall('\"boardgamesubdomain\"\:\[\{\"name\"\:\"(.*?) Games\"', string)[0]
+    print('TYPE:', gametype)
     categories = re.findall(r'\"boardgamecategory\":\[(.*?)\]', string)
     min_pl = re.findall('minplayers\"\:\"(.*?)\"', string)[0]
     max_pl = re.findall('maxplayers\"\:\"(.*?)\"', string)[0]
@@ -35,9 +37,10 @@ def parse_game(url):
             c = re.sub(r"\\", "", c)
         except:
             pass
-        print(c)
+        # print(c)
     info = dict()
     info['title'] = title 
+    info['type'] = gametype
     info['rank'] = int(rank)
     info['rating'] = float(rating)
     info['mean time'] = int(mean_time) 
