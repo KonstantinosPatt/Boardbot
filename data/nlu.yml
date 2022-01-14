@@ -16,6 +16,7 @@ nlu:
     - goodevening
     - good afternoon
     - hi!
+    - hi there
 - intent: goodbye
   examples: |
     - good afternoon
@@ -37,6 +38,10 @@ nlu:
     - of course
     - that sounds good
     - correct
+    - yes !
+    - great!
+    - good idea!
+    - yes!
 - intent: deny
   examples: |
     - no
@@ -93,6 +98,7 @@ nlu:
     - i want to play a [strategy](type) game
     - i want to play a [Strategy](type) game
     - i want to  play a [strategy](type) game
+    - [strategy](type)
 - intent: prefer_category
   examples: |
     - I'm looking for an [Economic](category) game
@@ -133,9 +139,32 @@ nlu:
     - yes id like a [dice](category) game
     - yes i'd like a [dice](category) game
     - yes i want a [dice](category) game
+    - i want a [puzzle](category) game
+    - i want to play a [dice](category) game
 - intent: prefer_num_players
   examples: |
     - [4 players](num_players)
+    - [5 players](num_players)
+    - [2 players](num_players)
+    - [1 player](num_players)
+    - [3 players](num_players)
+    - [6 players](num_players)
+    - [7 players](num_players)
+    - [8 players](num_players)
+    - [1](num_players)
+    - [2](num_players)
+    - [3](num_players)
+    - [4](num_players)
+    - [5](num_players)
+    - [6](num_players)
+    - [7](num_players)
+    - [8](num_players)
 - intent: prefer_time
   examples: |
-    - [90](num_players) minutes
+    - [90 minutes](time)
+    - [70 minutes](time)
+    - [one hour](time)
+    - [half an hour](time)
+    - [40 minutes](time)
+    - [30 minutes](time)
+    - [20 minutes](time)

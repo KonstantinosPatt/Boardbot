@@ -86,3 +86,39 @@ stories:
   - action: utter_suggest_game
   - intent: affirm
   - action: utter_goodbye
+- story: Story from Conversation ID e28980849ee34a3ca5bc63ae53590792
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: prefer_type
+    entities:
+    - type: strategy
+  - action: utter_ask_category
+  - intent: prefer_category
+    entities:
+    - category: dice
+  - action: utter_ask_num_players
+  - intent: prefer_num_players
+    entities:
+    - num_players: 4 players
+  - action: utter_suggest_game
+  - intent: affirm
+  - action: utter_goodbye
+- story: Story from Conversation ID c41d6f02bc3341bcbc877756e7d9f6aa
+  steps:
+  - action: utter_ask_num_players
+  - intent: prefer_num_players
+    entities:
+    - num_players: 2 players
+  - action: utter_ask_time
+  - intent: prefer_time
+    entities:
+    - num_players: '70'
+  - action: utter_suggest_game
+  - intent: mood_great
+  - action: utter_goodbye
+- story: Story from Conversation ID b1062489e2974944b4d61d167c346ccd
+  steps:
+  - action: utter_suggest_game
+  - intent: mood_great
+  - action: utter_goodbye
