@@ -3,7 +3,7 @@ config:
   store_entities_as_slots: true
 session_config:
   session_expiration_time: 60
-  carry_over_slots_to_new_session: true
+  carry_over_slots_to_new_session: false
 intents:
 - greet:
     use_entities: true
@@ -35,13 +35,35 @@ intents:
     use_entities: true
 entities:
 - title
-- type
-- rank
-- weight
 - category
 - num_players
-- mean_playtime
-slots: {}
+- time
+- gametype
+slots:
+  gametype:
+    type: rasa.shared.core.slots.CategoricalSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+    values:
+    - strategy
+    - abstract
+    - thematic
+    - family
+    - party
+    - customizable
+  category:
+    type: rasa.shared.core.slots.CategoricalSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+    values:
+    - economic
+    - fantasy
+    - adventure
+    - card game
+    - exploration
+    - medieval
 responses:
   utter_cheer_up:
   - image: https://i.imgur.com/nGF1K8f.jpg
@@ -73,5 +95,15 @@ actions:
 - utter_ask_type
 - utter_ask_players
 - utter_ask_time
-forms: {}
+forms:
+  boardgame_form:
+    required_slots:
+      category:
+      - entity: category
+        intent: prefer_category
+        type: from_entity
+      gametype:
+      - entity: gametype
+        intent: prefer_type
+        type: from_entity
 e2e_actions: []

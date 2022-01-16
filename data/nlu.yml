@@ -17,6 +17,7 @@ nlu:
     - good afternoon
     - hi!
     - hi there
+    - hello my alani
 - intent: goodbye
   examples: |
     - good afternoon
@@ -30,6 +31,7 @@ nlu:
     - see you around
     - bye bye
     - see you later
+    - oxi esy kleise
 - intent: affirm
   examples: |
     - yes
@@ -84,21 +86,36 @@ nlu:
     - so sad
 - intent: prefer_type
   examples: |
-    - I'm looking for a [strategy](type) game
-    - I'm looking for a [family](type) game
-    - I'm looking for a [thematic](type) game
-    - I'm looking for a [customizable](type) game
-    - I'm looking for an [abstract](type) game
-    - I'm looking for a [party](type) game
-    - i'm looking for a [Family](type) game
-    - [abstract](type)
-    - i want to play an [abstract](type) game
-    - i want to play an [Abstract](category) game
-    - [family](type) game
-    - i want to play a [strategy](type) game
-    - i want to play a [Strategy](type) game
-    - i want to  play a [strategy](type) game
-    - [strategy](type)
+    - I'm looking for a [strategy](gametype) game
+    - I'm looking for a [family](gametype) game
+    - I'm looking for a [thematic](gametype) game
+    - I'm looking for a [customizable](gametype) game
+    - I'm looking for an [abstract](gametype) game
+    - I'm looking for a [party](gametype) game
+    - i'm looking for a [Family](gametype) game
+    - [abstract](gametype)
+    - i want to play an [abstract](gametype) game
+    - i want to play an [Abstract](gametype) game
+    - [family](gametype) game
+    - i want to play a [strategy](gametype) game
+    - i want to  play a [strategy](gametype) game
+    - [strategy](gametype)
+    - hi i want to play a [strategy](gametype) game
+    - i want to play a [Strategy](gametype) game
+    - ii want to play a [strategy](gametype) game
+    - im in the mood for an [abstract](gametype) game
+- intent: prefer_time
+  examples: |
+    - 40 minutes[]{"entity": "gametype", "value": "Strategy"}
+    - [90 minutes](time)
+    - [70 minutes](time)
+    - [one hour](time)
+    - [half an hour](time)
+    - [40 minutes](time)
+    - [30 minutes](time)
+    - [20 minutes](time)
+    - [60 minutes](time)
+    - [1 hour](time)
 - intent: prefer_category
   examples: |
     - I'm looking for an [Economic](category) game
@@ -141,6 +158,10 @@ nlu:
     - yes i want a [dice](category) game
     - i want a [puzzle](category) game
     - i want to play a [dice](category) game
+    - yes i want a [Medieval](category) game
+    - i want a [medieval](category) game
+    - i want to play [card](category) game
+    - yes i want a [fantasy](category) game
 - intent: prefer_num_players
   examples: |
     - [4 players](num_players)
@@ -159,12 +180,5 @@ nlu:
     - [6](num_players)
     - [7](num_players)
     - [8](num_players)
-- intent: prefer_time
-  examples: |
-    - [90 minutes](time)
-    - [70 minutes](time)
-    - [one hour](time)
-    - [half an hour](time)
-    - [40 minutes](time)
-    - [30 minutes](time)
-    - [20 minutes](time)
+    - a game for [one player](num_players)
+    - [only me](num_players)

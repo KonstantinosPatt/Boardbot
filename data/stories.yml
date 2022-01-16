@@ -122,3 +122,57 @@ stories:
   - action: utter_suggest_game
   - intent: mood_great
   - action: utter_goodbye
+- story: Story from Conversation ID e16b31528dbb452db6fd0a1a3ce9c805
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: prefer_type
+    entities:
+    - type: strategy
+  - action: utter_ask_category
+  - intent: prefer_category
+    entities:
+    - category: Medieval
+  - action: utter_ask_num_players
+  - intent: prefer_num_players
+    entities:
+    - num_players: '5'
+  - action: utter_suggest_game
+- story: Story from Conversation ID 5721d0fb45064e1fb1ad3e9081f5c745
+  steps:
+  - intent: prefer_type
+    entities:
+    - gametype: strategy
+  - slot_was_set:
+    - gametype: strategy
+  - action: utter_ask_time
+- story: Story from Conversation ID 67ac1d90de3b436f9a235887c7e38b77
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: prefer_type
+    entities:
+    - gametype: abstract
+  - slot_was_set:
+    - gametype: abstract
+  - action: utter_ask_category
+  - intent: prefer_category
+    entities:
+    - category: fantasy
+  - slot_was_set:
+    - category: fantasy
+  - action: utter_ask_num_players
+  - intent: prefer_num_players
+    entities:
+    - num_players: '4'
+  - action: utter_ask_time
+  - intent: prefer_time
+    entities:
+    - time: 30 minutes
+  - slot_was_set:
+    - gametype: abstract
+  - slot_was_set:
+    - category: fantasy
+  - action: utter_suggest_game
+  - intent: affirm
+  - action: utter_goodbye
