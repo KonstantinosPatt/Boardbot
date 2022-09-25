@@ -36,7 +36,7 @@ def parse_game(url):
             c = re.sub(r"\\", "", c)
         except:
             pass
-        print(c)
+        # print(c)
     info = dict()
     info['title'] = title 
     info['type'] = gametype
@@ -67,40 +67,39 @@ def parse_game(url):
     df = pd.DataFrame.from_records([info])
     return df
 
-URL = "https://boardgamegeek.com/browse/boardgame/page/1"
-page = requests.get(URL)
-string = page.text
+def extract_top_games():
+    URL = "https://boardgamegeek.com/browse/boardgame/page/1"
+    page = requests.get(URL)
+    string = page.text
+    
+    # pattern = r'class=\'primary\' >(.*)<'
+    # games = re.findall(pattern, string)
+    
+    href = re.findall(r'href=\"\/boardgame(.*?)"', string)
+    href = href[::3]
+    # href = href[:10]
+    
+    sum_df = []
+    for h in href:
+        URL = f'https://boardgamegeek.com/boardgame{h}'
+        info = parse_game(URL)
+        info['link'] = URL
+        sum_df.append(info)
+    
+    df = pd.concat(sum_df)
+    
+    return df
 
-# print(page.text)
+# output = open('cats.txt', 'w')
+# for c in cats:
+#     output.write(c + "\n")
+#     print((c))
 
-pattern = r'class=\'primary\' >(.*)<'
+games = extract_top_games()
 
-games = re.findall(pattern, string)
+print(games)
 
-href = re.findall(r'href=\"\/boardgame(.*?)"', string)
-href = href[::3]
+gametype = 'Strategy'
+category = 'Adventure'
 
-# href = href[:10]
-
-sum_df = []
-for h in href:
-    URL = f'https://boardgamegeek.com/boardgame{h}'
-    info = parse_game(URL)
-    info['link'] = URL
-    sum_df.append(info)
-
-df = pd.concat(sum_df)
-
-category1 = df['category 1'].tolist()
-category2 = df['category 2'].tolist()
-category3 = df['category 3'].tolist()
-
-cats = category1 + category2 + category3
-#%%
-output = open('cats.txt', 'w')
-for c in cats:
-    output.write(c + "\n")
-    print((c))
-
-
-
+suggestion = (games.loc[games['type'] == gametype] and games.loc[games['category 1'] == category])

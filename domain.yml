@@ -23,21 +23,17 @@ intents:
     use_entities: true
 - prefer_type:
     use_entities: true
-- ask_type:
-    use_entities: true
-- ask_category:
-    use_entities: true
 - prefer_num_players:
     use_entities: true
 - agree:
     use_entities: true
-- prefer_time:
+- prefer_play_time:
     use_entities: true
 entities:
 - title
 - category
 - num_players
-- time
+- play_time
 - gametype
 slots:
   gametype:
@@ -45,56 +41,51 @@ slots:
     initial_value: null
     auto_fill: true
     influence_conversation: true
-    values:
-    - strategy
-    - abstract
-    - thematic
-    - family
-    - party
-    - customizable
   category:
     type: rasa.shared.core.slots.CategoricalSlot
     initial_value: null
     auto_fill: true
     influence_conversation: true
-    values:
-    - economic
-    - fantasy
-    - adventure
-    - card game
-    - exploration
-    - medieval
+  num_players:
+    type: rasa.shared.core.slots.CategoricalSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  play_time:
+    type: rasa.shared.core.slots.CategoricalSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+    # values:
+    # - 40
+    # - 45
+    # - 50
+    # - 55
+    # - 60
 responses:
-  utter_cheer_up:
-  - image: https://i.imgur.com/nGF1K8f.jpg
-    text: 'Here is something to cheer you up:'
-  utter_did_that_help:
-  - text: Did that help you?
-  utter_happy:
-  - text: Great, carry on!
   utter_goodbye:
-  - text: Bye
+  - text: Thanks for the chat! Bye
   utter_iamabot:
   - text: I am a bot, powered by Rasa.
   utter_greet:
-  - text: Hi! What do you want to play today?
-  - text: Hey! What kind of game are you in the mood for?
-  - text: Hi! How can I help?
-  utter_ask_category:
-  - text: Would you prefer a specific theme or category?
+  - text: Hi! I'm here to help you choose what board game to play next.
+  - text: Hey! Let's see what your next favourite board game will be.
   utter_ask_type:
-  - text: What type of game would you like it to be?
+  - text: What type of game would you like it to be? For example, would you prefer a Strategy, a Thematic, or an Abstract game?
+  utter_ask_category:
+  - text: Would you prefer a specific theme or category? E.g, would you like a Fantasy game, a Farming game, or maybe a Political game?
+  utter_ask_play_time:
+  - text: How long do you want to play more or less? Please reply in minutes.
   utter_ask_num_players:
+  - text: How many players will there be?
   - text: How many of you will be playing?
-  utter_suggest_game:
-  - text: May I suggest Gloomhaven?
-  utter_ask_time:
-  - text: How long do you want to play more or less?
 actions:
 - utter_ask_category
 - utter_ask_type
-- utter_ask_players
-- utter_ask_time
+- utter_ask_num_players
+- utter_ask_play_time
+- action_suggest_game   
+- action_summarize_information
 forms:
   boardgame_form:
     required_slots:
@@ -105,5 +96,13 @@ forms:
       gametype:
       - entity: gametype
         intent: prefer_type
+        type: from_entity
+      play_time:
+      - entity: play_time
+        intent: prefer_play_time
+        type: from_entity
+      num_players:
+      - entity: num_players
+        intent: prefer_num_players
         type: from_entity
 e2e_actions: []
