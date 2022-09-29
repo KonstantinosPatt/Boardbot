@@ -63,6 +63,8 @@ class action_suggest_game(Action):
             dispatcher.utter_message(text=f"May I suggest {final_sug}?")
             dispatcher.utter_message(image=suggestion.iloc[0]['image'])
             dispatcher.utter_message(text=suggestion.iloc[0]['description'])
+            dispatcher.utter_message(text="Here's a link to the game: " + suggestion.iloc[0]['link'])
+
         except:
             dispatcher.utter_message(text=f"I can't seem to find a {gametype} {category} game for {num_players} players that lasts {pref_time} minutes. Would you like to try something else?")
 

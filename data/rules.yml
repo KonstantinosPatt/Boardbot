@@ -13,9 +13,7 @@ rules:
   - action: utter_iamabot
 
 - rule: submit form
-  # condition:
-  # - active_loop: boardgame_form
   steps:
-    # - action: boardgame_form
     - action: action_suggest_game
     - active_loop: boardgame_form
+

@@ -73,7 +73,7 @@ responses:
   utter_ask_type:
   - text: What type of game would you like it to be? For example, would you prefer a Strategy, a Thematic, or an Abstract game?
   utter_ask_category:
-  - text: Would you prefer a specific theme or category? E.g, would you like a Fantasy game, a Farming game, or maybe a Political game?
+  - text: Would you prefer a specific theme or category? E.g, would you like a card game, an adventure game, or maybe an economic game?
   utter_ask_play_time:
   - text: How long do you want to play more or less? Please reply in minutes.
   utter_ask_num_players:
